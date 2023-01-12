@@ -1,0 +1,13 @@
+{
+  "name": "k8s-lab-with-minikub",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "zx": "^7.1.1"
+  },
+  "scripts": {
+    "start": "zx scripts/startMinikube.mjs",
+    "add-argocd": "zx scripts/setupArgoCD.mjs"
+  }
+}
