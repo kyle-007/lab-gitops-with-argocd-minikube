@@ -11,5 +11,6 @@ await $`sleep 120`;
 const argoCDAdminPassword = await readAndDecodeArgoCDAdminPassword();
 
 await $`echo setup ready, please login to http://127.0.0.1:8080 with username: admin and password: ${argoCDAdminPassword}`;
+await $`echo enginx is reachable at http://127.0.0.1:30100`;
 
 await $`kubectl port-forward -n argocd svc/argocd-server 8080:443`;
