@@ -1,4 +1,13 @@
 #!/usr/bin/env zx
 
-await $`kubectl get secret argocd-initial-admin-secret -n argocd -o yaml`
-await $`echo R2FtYXFHQVV4YUdXblE4Rg== | base64 --decode`
+export const readAndDecodeArgoCDAdminPassword = async () => {
+  const readResult =
+    await $`kubectl get secret argocd-initial-admin-secret -n argocd -o yaml`;
+
+  const passwordBase64Encode = readResult.stdout.split("\n")[2].split(": ")[1];
+
+  const decodedPasswordResult =
+    await $`echo ${passwordBase64Encode} | base64 --decode`;
+
+  return decodedPasswordResult.stdout;
+};

@@ -8,6 +8,6 @@
   },
   "scripts": {
     "start": "zx scripts/startMinikube.mjs",
-    "add-argocd": "zx scripts/setupArgoCD.mjs"
+    "start-gitops-env": "zx scripts/setupGitOpsEnv.mjs"
   }
 }
