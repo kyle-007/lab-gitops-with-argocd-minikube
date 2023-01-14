@@ -1,6 +1,6 @@
-#!/usr/bin/env zx
+import { $ } from "zx";
 
-export const readAndDecodeArgoCDAdminPassword = async () => {
+export const readAndDecodeArgoCDAdminPassword = async (): Promise<string> => {
   const readResult =
     await $`kubectl get secret argocd-initial-admin-secret -n argocd -o yaml`;
 

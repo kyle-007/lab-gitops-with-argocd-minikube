@@ -1,4 +1,4 @@
-#!/usr/bin/env zx
+import { $ } from "zx";
 
 import { readAndDecodeArgoCDAdminPassword } from "./readArgoCDPassword.mjs";
 
